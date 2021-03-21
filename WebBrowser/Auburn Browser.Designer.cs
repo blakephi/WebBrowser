@@ -65,7 +65,7 @@
             this.TabControl.Location = new System.Drawing.Point(0, 66);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(800, 384);
+            this.TabControl.Size = new System.Drawing.Size(778, 478);
             this.TabControl.TabIndex = 1;
             // 
             // tabPage1
@@ -74,7 +74,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 351);
+            this.tabPage1.Size = new System.Drawing.Size(770, 445);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -92,12 +92,13 @@
             this.BookmarkButton});
             this.ToolStrip.Location = new System.Drawing.Point(0, 33);
             this.ToolStrip.Name = "ToolStrip";
-            this.ToolStrip.Size = new System.Drawing.Size(800, 33);
+            this.ToolStrip.Size = new System.Drawing.Size(778, 33);
             this.ToolStrip.TabIndex = 2;
             this.ToolStrip.Text = "toolStrip1";
             // 
             // MenuStrip
             // 
+            this.MenuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.MenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -105,7 +106,7 @@
             this.helpToolStripMenuItem});
             this.MenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip.Name = "MenuStrip";
-            this.MenuStrip.Size = new System.Drawing.Size(800, 33);
+            this.MenuStrip.Size = new System.Drawing.Size(778, 33);
             this.MenuStrip.TabIndex = 3;
             this.MenuStrip.Text = "menuStrip1";
             // 
@@ -267,7 +268,7 @@
             this.WebBrowserControl.Location = new System.Drawing.Point(3, 3);
             this.WebBrowserControl.MinimumSize = new System.Drawing.Size(20, 20);
             this.WebBrowserControl.Name = "WebBrowserControl";
-            this.WebBrowserControl.Size = new System.Drawing.Size(786, 345);
+            this.WebBrowserControl.Size = new System.Drawing.Size(764, 439);
             this.WebBrowserControl.TabIndex = 0;
             // 
             // WebBrowser
@@ -275,7 +276,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(778, 544);
             this.Controls.Add(this.TabControl);
             this.Controls.Add(this.ToolStrip);
             this.Controls.Add(this.MenuStrip);
