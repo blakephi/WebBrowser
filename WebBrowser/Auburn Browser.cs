@@ -16,5 +16,16 @@ namespace WebBrowser
         {
             InitializeComponent();
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("The Auburn browser is developed by Blake Phillips, ID: 904169703 \n" +
+                            "This is Blake's first browser based project.");
+        }
+
+        private void exitBrowserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
