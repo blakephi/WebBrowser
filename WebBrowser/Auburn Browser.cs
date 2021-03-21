@@ -35,31 +35,41 @@ namespace WebBrowser
                             "All other buttons: https://www.flaticon.com/packs/lineal-interface?k=1616355040627");
         }
 
-        private void AddressBox_KeyUp(object sender, KeyEventArgs e)
+        private void AddressBox_KeyDown(object sender, KeyEventArgs e)
         {
-            string URL = "";
-            
             if (e.KeyCode == Keys.Enter)
             {
-                URL = AddressBox.Text;
+                Navigate(AddressBox.Text);
             }
-
-            if (Uri.IsWellFormedUriString(URL, UriKind.RelativeOrAbsolute))
-            {
-                tabPage1.Text = URL;
-                WebBrowserControl.Navigate(URL);
-            }    
         }
 
         private void GoButton_Click(object sender, EventArgs e)
         {
-            string URL = AddressBox.Text;
+            Navigate(AddressBox.Text);
+        }
 
-            if (Uri.IsWellFormedUriString(URL, UriKind.RelativeOrAbsolute))
+        private void Navigate(String address)
+        {
+            if (String.IsNullOrEmpty(address)) return;
+            if (address.Equals("about:blank")) return;
+            if (!address.StartsWith("http://") && !address.StartsWith("https://"))
             {
-                tabPage1.Text = URL;
-                WebBrowserControl.Navigate(URL);
+                address = "http://" + address;
             }
+
+            try
+            {
+                WebBrowserControl.Navigate(new Uri(address));
+            }
+            catch (System.UriFormatException)
+            {
+                return;
+            }
+        }
+
+        private void WebBrowserControl_Navigated(object sender, WebBrowserNavigatedEventArgs e)
+        {
+            AddressBox.Text = WebBrowserControl.Url.ToString();
         }
     }
 }

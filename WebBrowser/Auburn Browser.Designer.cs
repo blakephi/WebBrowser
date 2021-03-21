@@ -226,8 +226,12 @@
             // AddressBox
             // 
             this.AddressBox.AcceptsReturn = true;
+            this.AddressBox.AcceptsTab = true;
+            this.AddressBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AddressBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.AddressBox.Name = "AddressBox";
             this.AddressBox.Size = new System.Drawing.Size(520, 33);
+            this.AddressBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddressBox_KeyDown);
             // 
             // GoButton
             // 
