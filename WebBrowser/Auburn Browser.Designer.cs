@@ -52,10 +52,10 @@
             // 
             this.TabControl.Controls.Add(this.tabPage1);
             this.TabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TabControl.Location = new System.Drawing.Point(0, 36);
+            this.TabControl.Location = new System.Drawing.Point(0, 33);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(1028, 808);
+            this.TabControl.Size = new System.Drawing.Size(1028, 811);
             this.TabControl.TabIndex = 1;
             // 
             // tabPage1
@@ -64,7 +64,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1020, 775);
+            this.tabPage1.Size = new System.Drawing.Size(1020, 778);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -79,7 +79,7 @@
             this.helpToolStripMenuItem});
             this.MenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip.Name = "MenuStrip";
-            this.MenuStrip.Size = new System.Drawing.Size(1028, 36);
+            this.MenuStrip.Size = new System.Drawing.Size(1028, 33);
             this.MenuStrip.TabIndex = 3;
             this.MenuStrip.Text = "menuStrip1";
             // 
@@ -97,14 +97,16 @@
             // newTabToolStripMenuItem
             // 
             this.newTabToolStripMenuItem.Name = "newTabToolStripMenuItem";
-            this.newTabToolStripMenuItem.Size = new System.Drawing.Size(252, 34);
+            this.newTabToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.newTabToolStripMenuItem.Text = "New Tab";
+            this.newTabToolStripMenuItem.Click += new System.EventHandler(this.newTabToolStripMenuItem_Click);
             // 
             // closeCurrentTabToolStripMenuItem
             // 
             this.closeCurrentTabToolStripMenuItem.Name = "closeCurrentTabToolStripMenuItem";
-            this.closeCurrentTabToolStripMenuItem.Size = new System.Drawing.Size(252, 34);
+            this.closeCurrentTabToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.closeCurrentTabToolStripMenuItem.Text = "Close Current Tab";
+            this.closeCurrentTabToolStripMenuItem.Click += new System.EventHandler(this.closeCurrentTabToolStripMenuItem_Click);
             // 
             // printPageToolStripMenuItem
             // 
@@ -170,7 +172,7 @@
             this.customControls1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.customControls1.Location = new System.Drawing.Point(3, 3);
             this.customControls1.Name = "customControls1";
-            this.customControls1.Size = new System.Drawing.Size(1014, 769);
+            this.customControls1.Size = new System.Drawing.Size(1014, 772);
             this.customControls1.TabIndex = 0;
             // 
             // BrowserUI

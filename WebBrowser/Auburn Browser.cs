@@ -35,5 +35,14 @@ namespace WebBrowser
                             "All other buttons: https://www.flaticon.com/packs/lineal-interface?k=1616355040627");
         }
 
+        private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.TabControl.TabPages.Add(new TabPage("New Tab"));
+        }
+
+        private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.TabControl.TabPages.RemoveAt(this.TabControl.SelectedIndex);
+        }
     }
 }

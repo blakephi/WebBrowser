@@ -84,8 +84,7 @@ namespace WebBrowser
         {
             if (forwardList.Count > 0 && currentURL != forwardList.Peek())
             {
-                backList.Push(currentURL);
-                currentURL = forwardList.Peek();
+                backList.Push(AddressBox.Text);
                 Navigate(forwardList.Pop());
             }
         }
