@@ -37,7 +37,16 @@ namespace WebBrowser
 
         private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.TabControl.TabPages.Add(new TabPage("New Tab"));
+            var newTab = new TabPage()
+            {
+                Text = "New Tab"
+            };
+
+            CustomControls customControls = new CustomControls();
+            customControls.Dock = System.Windows.Forms.DockStyle.Fill;
+            newTab.Controls.Add(customControls);
+            customControls.BringToFront();
+            TabControl.TabPages.Add(newTab);
         }
 
         private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
@@ -49,7 +58,16 @@ namespace WebBrowser
         {
             if (e.Control && (e.KeyCode == Keys.T))
             {
-                this.TabControl.TabPages.Add(new TabPage("New Tab"));
+                var newTab = new TabPage()
+                {
+                    Text = "New Tab"
+                };
+
+                CustomControls customControls = new CustomControls();
+                customControls.Dock = System.Windows.Forms.DockStyle.Fill;
+                newTab.Controls.Add(customControls);
+                customControls.BringToFront();
+                TabControl.TabPages.Add(newTab);
             }
 
             if (e.Control && (e.KeyCode == Keys.W))

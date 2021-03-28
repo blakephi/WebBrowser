@@ -183,6 +183,7 @@
             this.ClientSize = new System.Drawing.Size(1028, 844);
             this.Controls.Add(this.TabControl);
             this.Controls.Add(this.MenuStrip);
+            this.KeyPreview = true;
             this.MainMenuStrip = this.MenuStrip;
             this.Name = "BrowserUI";
             this.Text = "Auburn Browser";
