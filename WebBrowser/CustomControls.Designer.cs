@@ -55,7 +55,7 @@ namespace WebBrowser
             this.BookmarkButton});
             this.ToolStrip.Location = new System.Drawing.Point(0, 0);
             this.ToolStrip.Name = "ToolStrip";
-            this.ToolStrip.Size = new System.Drawing.Size(531, 35);
+            this.ToolStrip.Size = new System.Drawing.Size(758, 33);
             this.ToolStrip.TabIndex = 3;
             this.ToolStrip.Text = "toolStrip1";
             // 
@@ -65,7 +65,7 @@ namespace WebBrowser
             this.BackButton.Image = ((System.Drawing.Image)(resources.GetObject("BackButton.Image")));
             this.BackButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(34, 30);
+            this.BackButton.Size = new System.Drawing.Size(34, 28);
             this.BackButton.Text = "toolStripButton1";
             this.BackButton.ToolTipText = "Back";
             // 
@@ -106,7 +106,8 @@ namespace WebBrowser
             this.AddressBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.AddressBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.AddressBox.Name = "AddressBox";
-            this.AddressBox.Size = new System.Drawing.Size(520, 31);
+            this.AddressBox.Size = new System.Drawing.Size(520, 33);
+            this.AddressBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddressBox_KeyDown);
             // 
             // GoButton
             // 
@@ -131,10 +132,10 @@ namespace WebBrowser
             // WebBrowserControl
             // 
             this.WebBrowserControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.WebBrowserControl.Location = new System.Drawing.Point(0, 35);
+            this.WebBrowserControl.Location = new System.Drawing.Point(0, 33);
             this.WebBrowserControl.MinimumSize = new System.Drawing.Size(20, 20);
             this.WebBrowserControl.Name = "WebBrowserControl";
-            this.WebBrowserControl.Size = new System.Drawing.Size(531, 450);
+            this.WebBrowserControl.Size = new System.Drawing.Size(758, 624);
             this.WebBrowserControl.TabIndex = 4;
             // 
             // CustomControls
@@ -144,7 +145,7 @@ namespace WebBrowser
             this.Controls.Add(this.WebBrowserControl);
             this.Controls.Add(this.ToolStrip);
             this.Name = "CustomControls";
-            this.Size = new System.Drawing.Size(531, 485);
+            this.Size = new System.Drawing.Size(758, 657);
             this.ToolStrip.ResumeLayout(false);
             this.ToolStrip.PerformLayout();
             this.ResumeLayout(false);
