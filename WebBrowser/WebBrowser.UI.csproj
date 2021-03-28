@@ -52,10 +52,19 @@
     <Compile Include="Auburn Browser.Designer.cs">
       <DependentUpon>Auburn Browser.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls.Designer.cs">
+      <DependentUpon>CustomControls.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Auburn Browser.resx">
       <DependentUpon>Auburn Browser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls.resx">
+      <DependentUpon>CustomControls.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -16,7 +16,7 @@ namespace WebBrowser
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WebBrowser());
+            Application.Run(new BrowserUI());
         }
     }
 }
