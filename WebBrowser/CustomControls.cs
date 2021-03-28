@@ -19,13 +19,13 @@ namespace WebBrowser
 
         Stack<string> backList = new Stack<string>();
         Stack<string> forwardList = new Stack<string>();
+        String currentURL;
 
         private void AddressBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 Navigate(AddressBox.Text);
-                backList.Push(AddressBox.Text);
             }
         }
 
@@ -43,6 +43,8 @@ namespace WebBrowser
                 address = "http://" + address;
             }
 
+            NewURL(address);
+
             try
             {
                 WebBrowserControl.Navigate(new Uri(address));
@@ -53,6 +55,16 @@ namespace WebBrowser
             }
         }
 
+        private void NewURL(String url)
+        {
+            if (currentURL != "")
+            {
+                backList.Push(currentURL);
+            }
+
+            currentURL = url;
+        }
+
         private void WebBrowserControl_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
             AddressBox.Text = WebBrowserControl.Url.ToString();
@@ -60,14 +72,22 @@ namespace WebBrowser
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            forwardList.Push(AddressBox.Text);
-            Navigate(backList.Pop());
+            if (backList.Count > 0 && currentURL != backList.Peek())
+            {
+                forwardList.Push(currentURL);
+                currentURL = backList.Peek();
+                Navigate(backList.Pop());
+            }
         }
 
         private void ForwardButton_Click(object sender, EventArgs e)
         {
-            backList.Push(AddressBox.Text);
-            Navigate(forwardList.Pop());
+            if (forwardList.Count > 0 && currentURL != forwardList.Peek())
+            {
+                backList.Push(currentURL);
+                currentURL = forwardList.Peek();
+                Navigate(forwardList.Pop());
+            }
         }
 
         private void RefreshButton_Click(object sender, EventArgs e)
