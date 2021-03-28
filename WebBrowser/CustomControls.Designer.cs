@@ -44,6 +44,7 @@ namespace WebBrowser
             // 
             // ToolStrip
             // 
+            this.ToolStrip.CanOverflow = false;
             this.ToolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.BackButton,
@@ -53,9 +54,10 @@ namespace WebBrowser
             this.AddressBox,
             this.GoButton,
             this.BookmarkButton});
+            this.ToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.ToolStrip.Location = new System.Drawing.Point(0, 0);
             this.ToolStrip.Name = "ToolStrip";
-            this.ToolStrip.Size = new System.Drawing.Size(758, 33);
+            this.ToolStrip.Size = new System.Drawing.Size(901, 33);
             this.ToolStrip.TabIndex = 3;
             this.ToolStrip.Text = "toolStrip1";
             // 
@@ -135,17 +137,18 @@ namespace WebBrowser
             this.WebBrowserControl.Location = new System.Drawing.Point(0, 33);
             this.WebBrowserControl.MinimumSize = new System.Drawing.Size(20, 20);
             this.WebBrowserControl.Name = "WebBrowserControl";
-            this.WebBrowserControl.Size = new System.Drawing.Size(758, 624);
+            this.WebBrowserControl.Size = new System.Drawing.Size(901, 763);
             this.WebBrowserControl.TabIndex = 4;
             // 
             // CustomControls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.WebBrowserControl);
             this.Controls.Add(this.ToolStrip);
             this.Name = "CustomControls";
-            this.Size = new System.Drawing.Size(758, 657);
+            this.Size = new System.Drawing.Size(901, 796);
             this.ToolStrip.ResumeLayout(false);
             this.ToolStrip.PerformLayout();
             this.ResumeLayout(false);
