@@ -17,11 +17,15 @@ namespace WebBrowser
             InitializeComponent();
         }
 
+        Stack<string> backList = new Stack<string>();
+        Stack<string> forwardList = new Stack<string>();
+
         private void AddressBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 Navigate(AddressBox.Text);
+                backList.Push(AddressBox.Text);
             }
         }
 
@@ -52,6 +56,18 @@ namespace WebBrowser
         private void WebBrowserControl_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
             AddressBox.Text = WebBrowserControl.Url.ToString();
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            forwardList.Push(AddressBox.Text);
+            Navigate(backList.Pop());
+        }
+
+        private void ForwardButton_Click(object sender, EventArgs e)
+        {
+            backList.Push(AddressBox.Text);
+            Navigate(forwardList.Pop());
         }
     }
 }

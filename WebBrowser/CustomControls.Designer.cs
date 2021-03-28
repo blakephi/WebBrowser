@@ -70,6 +70,7 @@ namespace WebBrowser
             this.BackButton.Size = new System.Drawing.Size(34, 28);
             this.BackButton.Text = "toolStripButton1";
             this.BackButton.ToolTipText = "Back";
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // ForwardButton
             // 
@@ -77,9 +78,10 @@ namespace WebBrowser
             this.ForwardButton.Image = ((System.Drawing.Image)(resources.GetObject("ForwardButton.Image")));
             this.ForwardButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ForwardButton.Name = "ForwardButton";
-            this.ForwardButton.Size = new System.Drawing.Size(34, 30);
+            this.ForwardButton.Size = new System.Drawing.Size(34, 28);
             this.ForwardButton.Text = "toolStripButton2";
             this.ForwardButton.ToolTipText = "Forward";
+            this.ForwardButton.Click += new System.EventHandler(this.ForwardButton_Click);
             // 
             // RefreshButton
             // 
@@ -87,7 +89,7 @@ namespace WebBrowser
             this.RefreshButton.Image = ((System.Drawing.Image)(resources.GetObject("RefreshButton.Image")));
             this.RefreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(34, 30);
+            this.RefreshButton.Size = new System.Drawing.Size(34, 28);
             this.RefreshButton.Text = "toolStripButton3";
             this.RefreshButton.ToolTipText = "Refresh";
             // 
@@ -97,7 +99,7 @@ namespace WebBrowser
             this.HomeButton.Image = ((System.Drawing.Image)(resources.GetObject("HomeButton.Image")));
             this.HomeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.HomeButton.Name = "HomeButton";
-            this.HomeButton.Size = new System.Drawing.Size(34, 30);
+            this.HomeButton.Size = new System.Drawing.Size(34, 28);
             this.HomeButton.Text = "toolStripButton4";
             this.HomeButton.ToolTipText = "Home";
             // 
@@ -108,7 +110,7 @@ namespace WebBrowser
             this.AddressBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.AddressBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.AddressBox.Name = "AddressBox";
-            this.AddressBox.Size = new System.Drawing.Size(520, 33);
+            this.AddressBox.Size = new System.Drawing.Size(520, 31);
             this.AddressBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddressBox_KeyDown);
             // 
             // GoButton
