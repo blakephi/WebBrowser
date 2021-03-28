@@ -69,5 +69,10 @@ namespace WebBrowser
             backList.Push(AddressBox.Text);
             Navigate(forwardList.Pop());
         }
+
+        private void RefreshButton_Click(object sender, EventArgs e)
+        {
+            WebBrowserControl.Refresh();
+        }
     }
 }

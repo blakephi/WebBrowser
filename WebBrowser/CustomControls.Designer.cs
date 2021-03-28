@@ -92,6 +92,7 @@ namespace WebBrowser
             this.RefreshButton.Size = new System.Drawing.Size(34, 28);
             this.RefreshButton.Text = "toolStripButton3";
             this.RefreshButton.ToolTipText = "Refresh";
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
             // HomeButton
             // 
