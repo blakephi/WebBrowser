@@ -63,6 +63,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="WebBrowserDataSet.cs">
+      <DependentUpon>WebBrowserDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="WebBrowserDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
