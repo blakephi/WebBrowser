@@ -63,20 +63,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="WebBrowserDBDataSet.Designer.cs">
+    <Compile Include="WebBrowserDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>WebBrowserDBDataSet.xsd</DependentUpon>
+      <DependentUpon>WebBrowserDataSet.xsd</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="WebBrowserDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="WebBrowserDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>WebBrowserDB.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -96,17 +87,26 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="WebBrowserDBDataSet.xsc">
-      <DependentUpon>WebBrowserDBDataSet.xsd</DependentUpon>
+    <None Include="WebBrowserDataSet.xsc">
+      <DependentUpon>WebBrowserDataSet.xsd</DependentUpon>
     </None>
-    <None Include="WebBrowserDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>WebBrowserDBDataSet.Designer.cs</LastGenOutput>
+    <None Include="WebBrowserDataSet.xsd">
       <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WebBrowserDataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="WebBrowserDBDataSet.xss">
-      <DependentUpon>WebBrowserDBDataSet.xsd</DependentUpon>
+    <None Include="WebBrowserDataSet.xss">
+      <DependentUpon>WebBrowserDataSet.xsd</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WebBrowserDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WebBrowserDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>WebBrowserDB.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
