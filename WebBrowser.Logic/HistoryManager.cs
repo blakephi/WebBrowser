@@ -7,14 +7,13 @@ using WebBrowser.Data.WebBrowserDataSetTableAdapters;
 
 namespace WebBrowser.Logic
 {
-    class HistoryManager
+    public class HistoryManager
     {
-        public static void AddItem (HistoryItem item)
+        public static void AddItem(HistoryItem item)
         {
             var adapter = new historyTableAdapter();
             adapter.Insert(item.URL, item.Title, item.Date);
         }
-
         public static List<HistoryItem> GetItems()
         {
             var adapter = new historyTableAdapter();
