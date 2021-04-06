@@ -81,5 +81,11 @@ namespace WebBrowser
             var historyForm = new HistoryManagerForm();
             historyForm.ShowDialog();
         }
+
+        private void manageBookmarksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var bookmarksForm = new BookmarkManagerForm();
+            bookmarksForm.ShowDialog();
+        }
     }
 }

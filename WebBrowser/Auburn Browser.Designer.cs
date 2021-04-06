@@ -151,6 +151,7 @@
             this.manageBookmarksToolStripMenuItem.Name = "manageBookmarksToolStripMenuItem";
             this.manageBookmarksToolStripMenuItem.Size = new System.Drawing.Size(272, 34);
             this.manageBookmarksToolStripMenuItem.Text = "Manage Bookmarks";
+            this.manageBookmarksToolStripMenuItem.Click += new System.EventHandler(this.manageBookmarksToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
