@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebBrowser.Logic;
 
 namespace WebBrowser
 {
@@ -26,12 +27,14 @@ namespace WebBrowser
             if (e.KeyCode == Keys.Enter)
             {
                 Navigate(AddressBox.Text);
+                AddToHistory();
             }
         }
 
         private void GoButton_Click(object sender, EventArgs e)
         {
             Navigate(AddressBox.Text);
+            AddToHistory();
         }
 
         private void Navigate(String address)
@@ -92,6 +95,28 @@ namespace WebBrowser
         private void RefreshButton_Click(object sender, EventArgs e)
         {
             WebBrowserControl.Refresh();
+        }
+
+        private void BookmarkButton_Click(object sender, EventArgs e)
+        {
+            var bookmarkItem = new BookmarkItem();
+            var text = new TabPage();
+            bookmarkItem.URL = AddressBox.Text;
+            bookmarkItem.Title = text.Text;
+            BookmarkManager.AddItem(bookmarkItem);
+        }
+
+        private void AddToHistory()
+        {
+            if (!WebBrowserControl.IsBusy)
+            {
+                var historyItem = new HistoryItem();
+                var text = new TabPage();
+                historyItem.URL = AddressBox.Text;
+                historyItem.Title = text.Text;
+                historyItem.Date = DateTime.Now;
+                HistoryManager.AddItem(historyItem);
+            }
         }
     }
 }

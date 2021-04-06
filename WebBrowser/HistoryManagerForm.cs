@@ -25,7 +25,7 @@ namespace WebBrowser
 
             foreach (var item in items)
             {
-                historyBox.Items.Add(string.Format("[0] 1 (2)", item.Date, item.Title, item.URL));
+                historyBox.Items.Add(string.Format("[{0}] {1} ({2})", item.Date, item.Title, item.URL));
             }
         }
     }

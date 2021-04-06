@@ -133,6 +133,7 @@ namespace WebBrowser
             this.BookmarkButton.Size = new System.Drawing.Size(34, 28);
             this.BookmarkButton.Text = "toolStripButton6";
             this.BookmarkButton.ToolTipText = "Bookmark";
+            this.BookmarkButton.Click += new System.EventHandler(this.BookmarkButton_Click);
             // 
             // WebBrowserControl
             // 

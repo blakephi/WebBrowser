@@ -25,7 +25,7 @@ namespace WebBrowser
 
             foreach (var item in items)
             {
-                bookmarkBox.Items.Add(string.Format("1 (2)", item.Title, item.URL));
+                bookmarkBox.Items.Add(string.Format("{1} ({2})", item.Title, item.URL));
             }
         }
     }
