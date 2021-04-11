@@ -27,14 +27,16 @@ namespace WebBrowser
             if (e.KeyCode == Keys.Enter)
             {
                 Navigate(AddressBox.Text);
-                AddToHistory();
+                AddToHistory(AddressBox.Text);
+                loadingBar.Value = 0;
             }
         }
 
         private void GoButton_Click(object sender, EventArgs e)
         {
             Navigate(AddressBox.Text);
-            AddToHistory();
+            AddToHistory(AddressBox.Text);
+            loadingBar.Value = 0;
         }
 
         private void Navigate(String address)
@@ -75,20 +77,17 @@ namespace WebBrowser
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            if (backList.Count > 0 && currentURL != backList.Peek())
+            if (WebBrowserControl.CanGoBack == true)
             {
-                forwardList.Push(currentURL);
-                currentURL = backList.Peek();
-                Navigate(backList.Pop());
+                WebBrowserControl.GoBack();
             }
         }
 
         private void ForwardButton_Click(object sender, EventArgs e)
         {
-            if (forwardList.Count > 0 && currentURL != forwardList.Peek())
+            if (WebBrowserControl.CanGoForward == true)
             {
-                backList.Push(AddressBox.Text);
-                Navigate(forwardList.Pop());
+                WebBrowserControl.GoForward();
             }
         }
 
@@ -106,17 +105,38 @@ namespace WebBrowser
             BookmarkManager.AddItem(bookmarkItem);
         }
 
-        private void AddToHistory()
+        private void AddToHistory(string address)
         {
-            if (!WebBrowserControl.IsBusy)
+            if (/*!WebBrowserControl.IsBusy && */AddressBox.Text != null)
             {
                 var historyItem = new HistoryItem();
                 var text = new TabPage();
-                historyItem.URL = AddressBox.Text;
+                historyItem.URL = address;
                 historyItem.Title = text.Text;
                 historyItem.Date = DateTime.Now;
                 HistoryManager.AddItem(historyItem);
             }
+        }
+
+        private void WebBrowserControl_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
+        {
+            double current = (double)e.CurrentProgress;
+            double max = (double)e.CurrentProgress;
+            double progress = (current / max) * 100;
+            loadingBar.Value = (int)progress;
+        }
+
+        private void WebBrowserControl_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            loadingBar.Value = 0;
+            loadingBar.Visible = false;
+            loadingText.Text = "Done";
+        }
+
+        private void WebBrowserControl_Navigating(object sender, WebBrowserNavigatingEventArgs e)
+        {
+            loadingBar.Visible = true;
+            loadingText.Text = "Loading page...";
         }
     }
 }
