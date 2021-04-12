@@ -32,7 +32,6 @@ namespace WebBrowser
             this.bookmarkBox = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.bookmarkSearch = new System.Windows.Forms.Button();
-            this.bookmarkClear = new System.Windows.Forms.Button();
             this.bookmarkDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -62,23 +61,15 @@ namespace WebBrowser
             this.bookmarkSearch.UseVisualStyleBackColor = true;
             this.bookmarkSearch.Click += new System.EventHandler(this.bookmarkSearch_Click);
             // 
-            // bookmarkClear
-            // 
-            this.bookmarkClear.Location = new System.Drawing.Point(713, 12);
-            this.bookmarkClear.Name = "bookmarkClear";
-            this.bookmarkClear.Size = new System.Drawing.Size(75, 28);
-            this.bookmarkClear.TabIndex = 3;
-            this.bookmarkClear.Text = "Clear";
-            this.bookmarkClear.UseVisualStyleBackColor = true;
-            // 
             // bookmarkDelete
             // 
-            this.bookmarkDelete.Location = new System.Drawing.Point(632, 12);
+            this.bookmarkDelete.Location = new System.Drawing.Point(713, 12);
             this.bookmarkDelete.Name = "bookmarkDelete";
             this.bookmarkDelete.Size = new System.Drawing.Size(75, 28);
             this.bookmarkDelete.TabIndex = 4;
             this.bookmarkDelete.Text = "Delete";
             this.bookmarkDelete.UseVisualStyleBackColor = true;
+            this.bookmarkDelete.Click += new System.EventHandler(this.bookmarkDelete_Click);
             // 
             // BookmarkManagerForm
             // 
@@ -86,7 +77,6 @@ namespace WebBrowser
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.bookmarkDelete);
-            this.Controls.Add(this.bookmarkClear);
             this.Controls.Add(this.bookmarkSearch);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.bookmarkBox);
@@ -103,7 +93,6 @@ namespace WebBrowser
         private System.Windows.Forms.ListBox bookmarkBox;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button bookmarkSearch;
-        private System.Windows.Forms.Button bookmarkClear;
         private System.Windows.Forms.Button bookmarkDelete;
     }
 }

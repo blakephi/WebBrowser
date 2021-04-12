@@ -31,7 +31,23 @@ namespace WebBrowser
 
         private void bookmarkSearch_Click(object sender, EventArgs e)
         {
+            var items = BookmarkManager.GetItems();
+            bookmarkBox.Items.Clear();
 
+            foreach (var item in items)
+            {
+                if (item.URL.Contains(bookmarkSearch.Text))
+                {
+                    bookmarkBox.Items.Add((string.Format("{0} ({1})"), item.URL, item.Title));
+                }
+            }
+        }
+
+        private void bookmarkDelete_Click(object sender, EventArgs e)
+        {
+            string selected = bookmarkBox.GetItemText(bookmarkBox.SelectedItem);
+            BookmarkManager.DeleteBookmark(selected);
+            bookmarkBox.Items.RemoveAt(bookmarkBox.SelectedIndex);
         }
     }
 }
