@@ -28,5 +28,10 @@ namespace WebBrowser
                 bookmarkBox.Items.Add(string.Format("{1} ({2})", item.Title, item.URL));
             }
         }
+
+        private void bookmarkSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

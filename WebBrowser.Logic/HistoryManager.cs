@@ -32,5 +32,32 @@ namespace WebBrowser.Logic
 
             return results;
         }
+
+        public static void ClearHistory()
+        {
+            var adapter = new historyTableAdapter();
+            var rows = adapter.GetData();
+
+            foreach (var row in rows)
+            {
+                adapter.Delete(row.Id, row.URL, row.Title, row.Date);
+            }
+        }
+
+        public static void DeleteSelected(string selected)
+        {
+            var adapter = new historyTableAdapter();
+            var rows = adapter.GetData();
+
+            foreach (var row in rows)
+            {
+                string check = string.Format(string.Format("[{0}] {1} ({2})"), row.Date, row.Title, row.URL);
+
+                if (check == selected)
+                {
+                    adapter.Delete(row.Id, row.URL, row.Title, row.Date);
+                }
+            }
+        }
     }
 }

@@ -28,5 +28,32 @@ namespace WebBrowser
                 historyBox.Items.Add(string.Format("[{0}] {1} ({2})", item.Date, item.Title, item.URL));
             }
         }
+
+        private void historySearchButton_Click(object sender, EventArgs e)
+        {
+            var items = HistoryManager.GetItems();
+            historyBox.Items.Clear();
+
+            foreach (var item in items)
+            {
+                if (item.Title.Contains(historySearchBox.Text))
+                {
+                    historyBox.Items.Add(string.Format("[{0}] {1} ({2})", item.Date, item.Title, item.URL));
+                }
+            }
+        }
+
+        private void deleteHistoryButton_Click(object sender, EventArgs e)
+        {
+            string selected = historyBox.GetItemText(historyBox.SelectedItem);
+            HistoryManager.DeleteSelected(selected);
+            historyBox.Items.RemoveAt(historyBox.SelectedIndex);
+        }
+
+        private void clearHistoryButton_Click(object sender, EventArgs e)
+        {
+            HistoryManager.ClearHistory();
+            historyBox.Items.Clear();
+        }
     }
 }

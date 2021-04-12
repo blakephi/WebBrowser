@@ -99,9 +99,8 @@ namespace WebBrowser
         private void BookmarkButton_Click(object sender, EventArgs e)
         {
             var bookmarkItem = new BookmarkItem();
-            var text = new TabPage();
             bookmarkItem.URL = AddressBox.Text;
-            bookmarkItem.Title = text.Text;
+            bookmarkItem.Title = WebBrowserControl.DocumentTitle;
             BookmarkManager.AddItem(bookmarkItem);
         }
 
@@ -110,9 +109,8 @@ namespace WebBrowser
             if (/*!WebBrowserControl.IsBusy && */AddressBox.Text != null)
             {
                 var historyItem = new HistoryItem();
-                var text = new TabPage();
                 historyItem.URL = address;
-                historyItem.Title = text.Text;
+                historyItem.Title = WebBrowserControl.DocumentTitle;
                 historyItem.Date = DateTime.Now;
                 HistoryManager.AddItem(historyItem);
             }
