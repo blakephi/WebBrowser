@@ -127,6 +127,7 @@ namespace WebBrowser
             this.GoButton.Size = new System.Drawing.Size(34, 28);
             this.GoButton.Text = "toolStripButton5";
             this.GoButton.ToolTipText = "Go";
+            this.GoButton.Click += new System.EventHandler(this.GoButton_Click);
             // 
             // BookmarkButton
             // 
