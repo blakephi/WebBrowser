@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebBrowser.Logic;
+using WebBrowser.Data.WebBrowserDataSetTableAdapters;
 
 namespace WebBrowser
 {
@@ -20,12 +21,13 @@ namespace WebBrowser
 
         private void BookmarkManagerForm_Load(object sender, EventArgs e)
         {
-            var items = BookmarkManager.GetItems();
-            bookmarkBox.Items.Clear();
+            var items = BookmarkManager.BookmarkData();
+            //bookmarkBox.Items.Clear();
 
             foreach (var item in items)
             {
-                bookmarkBox.Items.Add(string.Format("{1} ({2})", item.Title, item.URL));
+                string bookmark = String.Format("{0} ({1})", item.Title, item.URL);
+                bookmarkBox.Items.Add(bookmark);
             }
         }
 
@@ -36,9 +38,10 @@ namespace WebBrowser
 
             foreach (var item in items)
             {
-                if (item.URL.Contains(bookmarkSearch.Text))
+                if (item.URL.Contains(bookmarkSearch.Text) || item.Title.Contains(bookmarkSearch.Text))
                 {
-                    bookmarkBox.Items.Add((string.Format("{0} ({1})"), item.URL, item.Title));
+                    string search = String.Format("{0} ({1})", item.Title, item.URL);
+                    bookmarkBox.Items.Add(search);
                 }
             }
         }

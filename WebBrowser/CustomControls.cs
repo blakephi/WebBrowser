@@ -27,7 +27,7 @@ namespace WebBrowser
             if (e.KeyCode == Keys.Enter)
             {
                 Navigate(AddressBox.Text);
-                AddToHistory(AddressBox.Text);
+                AddToHistory(WebBrowserControl.Url);
                 loadingBar.Value = 0;
             }
         }
@@ -35,7 +35,7 @@ namespace WebBrowser
         private void GoButton_Click(object sender, EventArgs e)
         {
             Navigate(AddressBox.Text);
-            AddToHistory(AddressBox.Text);
+            AddToHistory(WebBrowserControl.Url);
             loadingBar.Value = 0;
         }
 
@@ -99,17 +99,17 @@ namespace WebBrowser
         private void BookmarkButton_Click(object sender, EventArgs e)
         {
             var bookmarkItem = new BookmarkItem();
-            bookmarkItem.URL = AddressBox.Text;
             bookmarkItem.Title = WebBrowserControl.DocumentTitle;
+            bookmarkItem.URL = WebBrowserControl.Url.ToString();
             BookmarkManager.AddItem(bookmarkItem);
         }
 
-        private void AddToHistory(string address)
+        private void AddToHistory(System.Uri url)
         {
-            if (/*!WebBrowserControl.IsBusy && */AddressBox.Text != null)
+            if (!WebBrowserControl.IsBusy && AddressBox.Text != null)
             {
                 var historyItem = new HistoryItem();
-                historyItem.URL = address;
+                historyItem.URL = AddressBox.Text;
                 historyItem.Title = WebBrowserControl.DocumentTitle;
                 historyItem.Date = DateTime.Now;
                 HistoryManager.AddItem(historyItem);

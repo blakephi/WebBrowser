@@ -36,7 +36,7 @@ namespace WebBrowser
 
             foreach (var item in items)
             {
-                if (item.Title.Contains(historySearchBox.Text))
+                if (item.Title.Contains(historySearchBox.Text) || item.URL.Contains(historySearchBox.Text))
                 {
                     historyBox.Items.Add(string.Format("[{0}] {1} ({2})", item.Date, item.Title, item.URL));
                 }

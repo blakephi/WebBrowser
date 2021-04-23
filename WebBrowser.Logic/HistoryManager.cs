@@ -51,7 +51,7 @@ namespace WebBrowser.Logic
 
             foreach (var row in rows)
             {
-                string check = string.Format(string.Format("[{0}] {1} ({2})"), row.Date, row.Title, row.URL);
+                string check = string.Format(string.Format("[{0}] {1} ({2})", row.Date, row.Title, row.URL));
 
                 if (check == selected)
                 {

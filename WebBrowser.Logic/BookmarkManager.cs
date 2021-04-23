@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebBrowser.Data;
 using WebBrowser.Data.WebBrowserDataSetTableAdapters;
+using static WebBrowser.Data.WebBrowserDataSet;
 
 
 namespace WebBrowser.Logic
@@ -19,8 +21,8 @@ namespace WebBrowser.Logic
         public static List<BookmarkItem> GetItems()
         {
             var adapter = new BookmarksTableAdapter();
-            var results = new List<BookmarkItem>();
             var rows = adapter.GetData();
+            var results = new List<BookmarkItem>();
 
             foreach (var row in rows)
             {
@@ -45,9 +47,15 @@ namespace WebBrowser.Logic
 
                 if (check == selected)
                 {
-                    adapter.Delete(row.Id, row.Title, row.URL);
+                    adapter.Delete(row.Id, row.Title);
                 }
             }
+        }
+
+        public static BookmarksDataTable BookmarkData()
+        {
+            var adapter = new BookmarksTableAdapter();
+            return adapter.GetData();
         }
     }
 }
